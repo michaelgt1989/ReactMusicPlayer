@@ -11,15 +11,14 @@ import React from 'react';
     }
 
 const searchSong = () =>{
-        return(
-          <Model 
+    return(
+        <Modal 
             show={this.props.isOpen} 
-            onHide={this.props.closeModel}
-          >
-          <Model.Header closeButton>
-            <Model.Title>Model Form Title</Model.Title>
-          </Model.Header>
-          <Model.Body>
+            onHide={this.props.closeModel} >
+            <Modal.Header closeButton>
+            <Modal.Title>Temp Holding Title</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
               <Form.Group >
                   <Form.Label>Title: </Form.Label>
                   <Form.Control name= 'title' type="text" onChange={this.handleChange} value={this.state.title} placeholder={this.state.title}/>           
@@ -32,13 +31,13 @@ const searchSong = () =>{
                   <Form.Label>Genre: </Form.Label>
                   <Form.Control name = 'genre' type="text" onChange={this.handleChange} value={this.state.genre} placeholder={this.state.genre}/>           
               </Form.Group>
-          </Model.Body>
-          <Model.Footer>
+          </Modal.Body>
+          <Modal.Footer>
               <Button variant="primary" type="submit" onClick={() => this.props.handleSubmit(this.state.name)}>
                   Submit
               </Button>
-          </Model.Footer>
-        </Model>
+          </Modal.Footer>
+        </Modal>
         )
         }
 export default searchSong;
